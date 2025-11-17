@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reclaiming Roots: Rediscovering Indian Identity</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: #faf8f3;
+            color: #2c1810;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(139, 69, 19, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #ffe8d6;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #d4845c 0%, #8b4513 50%, #d97941 100%);
+            overflow: hidden;
+            margin-top: 60px;
+        }
+
+        .pattern-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.15;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px);
+            animation: patternMove 20s linear infinite;
+        }
+
+        @keyframes patternMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(70px, 70px); }
+        }
+
+        .mandala {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            animation: rotate 30s linear infinite;
+        }
+
+        .mandala-1 {
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            right: -100px;
+        }
+
+        .mandala-2 {
+            width: 300px;
+            height: 300px;
+            bottom: -80px;
+            left: -80px;
+            animation-direction: reverse;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 900px;
+            padding: 40px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.6rem;
+            color: #ffe8d6;
+            margin-bottom: 15px;
+            font-style: italic;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: #ffd4b3;
+            margin-bottom: 40px;
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .culture-icon {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .culture-icon:hover {
+            transform: translateY(-10px) scale(1.05);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .icon-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .icon-label {
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #8b4513;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        section {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #8b4513;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #d4845c, #8b4513);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        .why-section {
+            background: linear-gradient(135deg, #fff5eb 0%, #ffe8d6 100%);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .purpose-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #5c4033;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+
+        .quote-box {
+            background: rgba(139, 69, 19, 0.1);
+            border-left: 5px solid #8b4513;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 800px;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #2c1810;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 15px;
+            color: #8b4513;
+        }
+
+        .stat-box {
+            background: #8b4513;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 600px;
+            margin: 30px auto;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .culture-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .culture-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border-color: #d4845c;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: #8b4513;
+            margin-bottom: 15px;
+        }
+
+        .card-description {
+            color: #5c4033;
+            line-height: 1.6;
+        }
+
+        .comparison-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table {
+            width: 100%;
+            margin-top: 30px;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            background: #8b4513;
+            color: white;
+            padding: 20px;
+            font-size: 1.2rem;
+        }
+
+        .comparison-table td {
+            padding: 20px;
+            border-bottom: 1px solid #e0d5c7;
+        }
+
+        .comparison-table tr:hover {
+            background: #fff5eb;
+        }
+
+        .western {
+            color: #666;
+        }
+
+        .indian {
+            color: #8b4513;
+            font-weight: 600;
+        }
+
+        .quiz-container {
+            background: linear-gradient(135deg, #d4845c, #8b4513);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+        }
+
+        .quiz-button {
+            background: #ffd700;
+            color: #8b4513;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            background: #e8dcc9;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .gallery-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+
+        .gallery-title {
+            font-size: 1.2rem;
+            color: #8b4513;
+            font-weight: 600;
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .action-card {
+            background: linear-gradient(135deg, #fff5eb, #ffe8d6);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .action-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .action-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .action-title {
+            font-size: 1.4rem;
+            color: #8b4513;
+            margin-bottom: 15px;
+        }
+
+        .action-button {
+            background: #8b4513;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .action-button:hover {
+            background: #d4845c;
+            transform: scale(1.05);
+        }
+
+        .social-section {
+            background: linear-gradient(135deg, #8b4513, #d4845c);
+            color: white;
+            text-align: center;
+            padding: 60px 40px;
+            border-radius: 20px;
+        }
+
+        .hashtag {
+            font-size: 2rem;
+            margin: 20px 0;
+            color: #ffd700;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .social-icon {
+            font-size: 3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        footer {
+            background: #2c1810;
+            color: #e0d5c7;
+            padding: 60px 5%;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #e0d5c7;
+            line-height: 1.8;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #ffd700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #5c4033;
+            color: #a89883;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 1100px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            margin: 20px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.5rem;
+            cursor: pointer;
+            color: #8b4513;
+            background: none;
+            border: none;
+            z-index: 10;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: #d4845c;
+        }
+
+        .video-section {
+            margin: 30px 0;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-title {
+            font-size: 1.3rem;
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .modal-header h2 {
+            color: #8b4513;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .modal-header p {
+            color: #5c4033;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .icon-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .modal-content {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .close-modal {
+                top: 10px;
+                right: 15px;
+                font-size: 2rem;
+            }
+
+            .modal-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .video-title {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#why">Why Reclaim</a></li>
+            <li><a href="#explore">Explore</a></li>
+            <li><a href="#comparison">Identity</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#action">Take Action</a></li>
+            <li><a href="#social">Community</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="pattern-overlay"></div>
+        <div class="mandala mandala-1"></div>
+        <div class="mandala mandala-2"></div>
+
+        <div class="hero-content">
+            <h1 class="hero-title">Reclaiming Roots</h1>
+            <p class="hero-subtitle">Rediscovering Indian Identity</p>
+            <p class="hero-tagline">Celebrating our culture, traditions, and timeless wisdom.</p>
+
+            <div class="icon-grid">
+                <div class="culture-icon">
+                    <span class="icon-emoji">💃</span>
+                    <div class="icon-label">Nritya</div>
+                </div>
+                <div class="culture-icon">
+                    <span class="icon-emoji">🎵</span>
+                    <div class="icon-label">Sangeet</div>
+                </div>
+                <div class="culture-icon">
+                    <span class="icon-emoji">🌿</span>
+                    <div class="icon-label">Sustainable</div>
+                </div>
+                <div class="culture-icon">
+                    <span class="icon-emoji">🏆</span>
+                    <div class="icon-label">Contest</div>
+                </div>
+                <div class="culture-icon">
+                    <span class="icon-emoji">🛕</span>
+                    <div class="icon-label">Food</div>
+                </div>
+                <div class="culture-icon">
+                    <span class="icon-emoji">🕉️</span>
+                    <div class="icon-label">Slow Living</div>
+                </div>
+                <div class="culture-icon">
+                    <span class="icon-emoji">🧵</span>
+                    <div class="icon-label">Textile</div>
+                </div>
+            </div>
+    
+            <script>
+                function openArtVideos(){
+                    // navigate to the dedicated video page
+                    window.location.href = 'video.html';
+                }
+
+                function openSangeetVideos(){
+                    // navigate to the dedicated Sangeet page
+                    window.location.href = 'video_sangeet.html';
+                }
+
+                function openPhilosophyVideos(){
+                    // navigate to the dedicated Philosophy page
+                    window.location.href = 'video_philosophy.html';
+                }
+
+                function openTextilesVideos(){
+                    // navigate to the dedicated Textiles & Crafts page
+                    window.location.href = 'video_textiles.html';
+                }
+
+                function openFoodVideos(){
+                    // navigate to the dedicated Food & Rituals page
+                    window.location.href = 'video_food.html';
+                }
+
+                function openQuiz(){
+                    var m = document.getElementById('quizModal');
+                    if(m) m.classList.add('active');
+                }
+
+                function closeQuiz(){
+                    var m = document.getElementById('quizModal');
+                    if(m) m.classList.remove('active');
+                }
+            </script>
+
+        </body>
+        </html>
+            <a href="#why" class="cta-button">Explore Your Heritage</a>
+        </div>
+    </section>
+
+    <section id="why">
+        <div class="why-section">
+            <h2 class="section-title">Why Reclaim Our Roots?</h2>
+            <p class="purpose-text">
+                In an era of rapid globalization, young Indians are increasingly disconnected from their rich cultural heritage. 
+                We aim to bridge this gap by celebrating the depth, wisdom, and beauty of Indian traditions while fostering 
+                pride in our identity. It's time to move beyond blind idolization and rediscover what makes us uniquely Indian.
+            </p>
+
+            <div class="quote-box">
+                "Arise, awake, and stop not till the goal is reached. We are the inheritors of a glorious past, 
+                and it is our duty to keep this flame burning bright for generations to come."
+                <div class="quote-author">— Swami Vivekananda</div>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-number">73%</div>
+                <p>of Indian youth report feeling disconnected from traditional cultural practices, 
+                preferring Western trends over indigenous traditions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="explore">
+        <h2 class="section-title">Explore Indian Culture</h2>
+        <div class="culture-grid">
+            <div class="culture-card" onclick="openArtVideos()">
+                <div class="card-icon">🎨</div>
+                <h3 class="card-title">Art & Design</h3>
+                <p class="card-description">
+                    Discover Madhubani, Kalamkari, Rangoli, and the architectural marvels that define Indian aesthetics.
+                </p>
+            </div>
+
+            <div class="culture-card" onclick="openSangeetVideos()">
+                <div class="card-icon">🎶</div>
+                <h3 class="card-title">Sangeet & Nritya</h3>
+                <p class="card-description">
+                    Explore classical forms like Bharatanatyam, Kathak, and Hindustani sangeet, alongside vibrant folk traditions.
+                </p>
+            </div>
+
+            <div class="culture-card" onclick="openPhilosophyVideos()">
+                <div class="card-icon">📜</div>
+                <h3 class="card-title">Philosophy & Wisdom</h3>
+                <p class="card-description">
+                    Delve into the Vedas, Upanishads, Yoga, and Ayurveda—timeless wisdom for modern living.
+                </p>
+            </div>
+
+            <div class="culture-card" onclick="openTextilesVideos()">
+                <div class="card-icon">🧵</div>
+                <h3 class="card-title">Textiles & Crafts</h3>
+                <p class="card-description">
+                    Celebrate handlooms, traditional weaving techniques, and the sustainable textile heritage of India.
+                </p>
+            </div>
+
+            <div class="culture-card" onclick="openFoodVideos()">
+                <div class="card-icon">🛕</div>
+                <h3 class="card-title">Food & Rituals</h3>
+                <p class="card-description">
+                    Experience regional cuisines, festivals, and the sacred rituals that bind communities together.
+                </p>
+            </div>
+
+            <div class="culture-card">
+                <div class="card-icon">🕉️</div>
+                <h3 class="card-title">Slow Living</h3>
+                <p class="card-description">
+                    Rediscover the Indian philosophy of mindful living, sustainability, and harmony with nature.
+                </p>
+            </div>
+
+            <div class="culture-card">
+                <div class="card-icon">🏆</div>
+                <h3 class="card-title">Contests & Challenges</h3>
+                <p class="card-description">
+                    Participate in cultural competitions, showcase your talent, and win exciting prizes while celebrating heritage.
+                </p>
+            </div>
+
+            <div class="culture-card">
+                <div class="card-icon">📚</div>
+                <h3 class="card-title">How West Copied Us</h3>
+                <p class="card-description">
+                    Discover how yoga, meditation, Ayurveda, and Indian wisdom influenced global wellness trends.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="comparison">
+        <h2 class="section-title">Western Influence vs Indian Identity</h2>
+        <div class="comparison-container">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Western Trends</th>
+                        <th>Indian Values</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Fashion</strong></td>
+                        <td class="western">Fast fashion, disposable clothing</td>
+                        <td class="indian">Handlooms, sustainable textiles, generational pieces</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lifestyle</strong></td>
+                        <td class="western">Individualism, instant gratification</td>
+                        <td class="indian">Community focus, mindfulness, spiritual growth</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Health</strong></td>
+                        <td class="western">Pharmaceutical dependency</td>
+                        <td class="indian">Ayurveda, holistic wellness, yoga</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Values</strong></td>
+                        <td class="western">Material success, competition</td>
+                        <td class="indian">Inner peace, dharma, seva (service)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Environment</strong></td>
+                        <td class="western">Consumerism, waste culture</td>
+                        <td class="indian">Respect for nature, sustainable living</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="quiz-container">
+                <h3 style="font-size: 2rem; margin-bottom: 15px;">How Rooted Are You?</h3>
+                <p style="font-size: 1.1rem;">Take our cultural awareness quiz and discover your connection to Indian heritage!</p>
+                <button class="quiz-button" onclick="openQuiz()">Start Quiz</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2 class="section-title">Multimedia Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="gallery-icon">🎥</div>
+                <h4 class="gallery-title">Video Interviews</h4>
+                <p>Stories from elders and artisans</p>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-icon">📱</div>
+                <h4 class="gallery-title">Reels & Shorts</h4>
+                <p>Modern takes on tradition</p>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-icon">📸</div>
+                <h4 class="gallery-title">Photo Gallery</h4>
+                <p>Traditional attire & rituals</p>
+            </div>
+
+            <div class="gallery-item">
+                <div class="gallery-icon">🎙️</div>
+                <h4 class="gallery-title">Podcasts</h4>
+                <p>Deep dives into culture</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="action">
+        <h2 class="section-title">Take Action</h2>
+        <div class="action-grid">
+            <div class="action-card">
+                <div class="action-icon">🎓</div>
+                <h3 class="action-title">Join a Workshop</h3>
+                <p>Learn traditional arts, music, or dance from expert practitioners.</p>
+                <button class="action-button">Find Workshops</button>
+            </div>
+
+            <div class="action-card">
+                <div class="action-icon">🤝</div>
+                <h3 class="action-title">Volunteer</h3>
+                <p>Collaborate with NGOs, schools, and heritage preservation clubs.</p>
+                <button class="action-button">Get Involved</button>
+            </div>
+
+            <div class="action-card">
+                <div class="action-icon">📥</div>
+                <h3 class="action-title">Downloadables</h3>
+                <p>Posters, wallpapers, and guides on Indian traditions.</p>
+                <button class="action-button">Download Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="social">
+        <div class="social-section">
+            <h2 class="section-title" style="color: white;">Join the Movement</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">
+                Share your story of cultural pride and inspire others!
+            </p>
+            <div class="hashtag">#ReclaimingRoots</div>
+            <p>Follow us and be part of the conversation</p>
+            
+            <div class="social-icons">
+                <span class="social-icon">📷</span>
+                <span class="social-icon">🐦</span>
+                <span class="social-icon">📘</span>
+                <span class="social-icon">▶️</span>
+            </div>
+        </div>
+    </section>
+<!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About PSDT</h3>
+                <p>
+                    The Public Society for Development and Technology is committed to preserving 
+                    and promoting Indian cultural heritage among youth.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="#why">About Us</a></p>
+                <p><a href="#explore">Cultural Resources</a></p>
+                <p><a href="#action">Get Involved</a></p>
+                <p><a href="#social">Community</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@reclaimingroots.org</p>
+                <p>Phone: +91 XXX XXX XXXX</p>
+                <p>Address: New Delhi, India</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <p><a href="#">Cultural Guidelines</a></p>
+                <p><a href="#">Partner Organizations</a></p>
+                <p><a href="#">Research Papers</a></p>
+                <p><a href="#">Media Kit</a></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Reclaiming Roots | Public Society for Development and Technology</p>
+            <p>With gratitude to all contributors, artisans, and cultural custodians</p>
+        </div>
+    </footer>
+
+    <!-- Quiz Modal -->
+    <div id="quizModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeQuiz()">&times;</span>
+            <h2 style="text-align: center; margin-bottom: 20px;">Cultural Awareness Quiz</h2>
+            <div id="quizContent">
+                <!-- Quiz questions will be dynamically inserted here -->
+            </div>
+        </div>
+    </div> 

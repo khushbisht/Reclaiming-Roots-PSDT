@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Art & Design Videos — Reclaiming Roots</title>
+    <style>
+        body { font-family: 'Georgia', serif; background: #faf8f3; color: #2c1810; padding: 30px; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        h1 { color: #8b4513; font-size: 2rem; margin-bottom: 10px; }
+        p.lead { color: #5c4033; margin-bottom: 20px; }
+        .video-list { display: grid; gap: 12px; margin-bottom: 24px; }
+        .video-item { background: white; padding: 14px 18px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); cursor: pointer; display:flex; align-items:center; justify-content:space-between; }
+        .video-item:hover { transform: translateY(-3px); }
+        .video-item .title { font-weight:600; color:#8b4513; }
+        .back { background:#8b4513; color:white; padding:10px 16px; border-radius:10px; display:inline-block; text-decoration:none; }
+        .player { background:white; border-radius:12px; padding:16px; box-shadow:0 10px 30px rgba(0,0,0,0.12); }
+        .video-wrapper { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:10px; }
+        .video-wrapper iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+        .muted-note { font-size:0.9rem; color:#666; margin-top:10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back" onclick="history.back()">← Back</a>
+        <h1>Art & Design — Video Library</h1>
+        <p class="lead">Click a video to play. Videos open inside the player below and will autoplay.</p>
+
+        <div class="video-list" id="videoList">
+            <div class="video-item" data-video-id="KM2taeVv6qQ" onclick="playVideo('KM2taeVv6qQ')">
+                <div class="title">1. Art & Design — Video 1</div>
+                <div class="meta">YouTube</div>
+            </div>
+
+            <div class="video-item" data-video-id="CkM0QI3c3Yk" onclick="playVideo('CkM0QI3c3Yk')">
+                <div class="title">2. Art & Design — Video 2</div>
+                <div class="meta">YouTube</div>
+            </div>
+
+            <div class="video-item" data-video-id="Oen5nZxdNOw" onclick="playVideo('Oen5nZxdNOw')">
+                <div class="title">3. Art & Design — Video 3</div>
+                <div class="meta">YouTube (short link)</div>
+            </div>
+        </div>
+
+        <div class="player">
+            <div class="video-wrapper" id="playerWrap">
+                <iframe id="ytPlayer" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="muted-note">If a video doesn't start, click the item again or allow autoplay in your browser.</div>
+        </div>
+    </div>
+
+    <script>
+        function getQueryParam(name) {
+            var params = new URLSearchParams(window.location.search);
+            return params.get(name);
+        }
+
+        function playVideo(id){
+            var iframe = document.getElementById('ytPlayer');
+            if(!id) return;
+            // set embed URL with autoplay
+            iframe.src = 'https://www.youtube.com/embed/' + encodeURIComponent(id) + '?rel=0&autoplay=1';
+            // update hash so back/forward behavior is friendlier
+            try { history.replaceState(null, '', '?v=' + encodeURIComponent(id)); } catch(e){}
+        }
+
+        // on load: if ?v=ID provided, play it
+        (function(){
+            var vid = getQueryParam('v');
+            if(vid) playVideo(vid);
+        })();
+    </script>
+</body>
+</html>
